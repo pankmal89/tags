@@ -10,11 +10,8 @@
       tags: [never, alpha]
 
 
-
     - name: install httpd
       yum: 
         name: httpd
         state: installed
-      tags: [never, beta]  
-
-
+      tags: [never, beta]
