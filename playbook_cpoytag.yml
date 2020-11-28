@@ -1,0 +1,16 @@
+---
+- name: playbook copy tag
+  hosts: all
+  become: true
+  tasks:
+    - name: copy content for alpha tag
+      copy:
+        content : 'i am alpha'
+        dest: /tmp/alpha.txt
+      tags: [never, alpha]
+
+    - name: copy content for beta
+      copy:
+        content: 'i am beta'
+        dest: /tmp/beta.txt
+      tags: [never, beta]

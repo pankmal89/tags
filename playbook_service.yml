@@ -1,0 +1,16 @@
+---
+- name: playbook for tag service
+  hosts: all
+  become: true
+  tasks:
+    - name: install httpd
+      yum:
+        name: httpd
+        state: installed
+      tags: [never, alpha]
+
+    - name: install vstp
+      yum:
+        name: vsftpd
+        state: installed
+      tags: [never, beta]
