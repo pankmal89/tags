@@ -1,0 +1,17 @@
+---
+
+- name: creating tag for httpd
+  hosts: all
+  become: true
+  tasks:
+    - name: installing httpd
+      yum:
+        name: httpd
+        state: installed
+      tags: [never, alpha]
+
+    - name: installing vsftpd
+      yum:
+        name: vsftpd
+        state: installed
+      tags: [never, beta]      

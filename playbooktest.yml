@@ -1,0 +1,17 @@
+---
+- name: creating testing tag
+  hosts: all
+  become: true
+  tasks:
+    - name: creating alpha tag
+      copy:
+        content: 'ram shyam'
+        dest: /tmp/tags.txt
+      tags: [never, alpha]
+
+    - name: creating beta tag
+      copy:
+        content: 'welcome to ex447'
+        dest: /tmp/tags.txt
+      tags: [never, beta]
+      
